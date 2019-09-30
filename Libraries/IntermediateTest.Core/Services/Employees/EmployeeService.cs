@@ -25,7 +25,7 @@ namespace IntermediateTest.Core.Services.Employees
             {
                 PersonIdentifier = governmentEmployee.PersonIdentifier,
                 BirthDate = governmentEmployee.BirthDate,
-                Account = governmentEmployee == null ? new Account() : new Account
+                Account = governmentEmployee.Account == null ? new Account() : new Account
                 {
                     Balance = governmentEmployee.Account.Balance,
                     Withdrawals = governmentEmployee.Account?.Withdrawals.Select(gw => new Withdrawal

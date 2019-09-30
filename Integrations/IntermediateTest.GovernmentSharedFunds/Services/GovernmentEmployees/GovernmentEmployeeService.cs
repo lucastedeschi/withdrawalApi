@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using IntermediateTest.GovernmentSharedFunds.Models.GovernmentEmployees;
-using static IntermediateTest.GovernmentSharedFunds.Models.GovernmentEmployees.GovernmentEmployeeResponse.GovernmentAccount;
 
 namespace IntermediateTest.GovernmentSharedFunds.Services.GovernmentEmployees
 {
@@ -10,7 +9,9 @@ namespace IntermediateTest.GovernmentSharedFunds.Services.GovernmentEmployees
     {
         public async Task<GovernmentEmployeeResponse> GetGovernmentEmployeeByPersonIdentifier(string personIdentifier)
         {
-            //Mocked results
+            //Seria realizado agora um request para alguma suposta API do governo para obter os dados dos funcionários
+            //No caso, será gerado um "mock" simulando uma suposta resposta do governo
+
             switch (personIdentifier) {
                 case "123654789":
                     return new GovernmentEmployeeResponse
@@ -20,7 +21,7 @@ namespace IntermediateTest.GovernmentSharedFunds.Services.GovernmentEmployees
                         Account = new GovernmentEmployeeResponse.GovernmentAccount
                         {
                             Balance = 400.00m,
-                            Withdrawals = new List<GovernmentWithdrawal>()
+                            Withdrawals = new List<GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal>()
                         }
 
                     };
@@ -32,7 +33,7 @@ namespace IntermediateTest.GovernmentSharedFunds.Services.GovernmentEmployees
                         Account = new GovernmentEmployeeResponse.GovernmentAccount
                         {
                             Balance = 800.00m,
-                            Withdrawals = new List<GovernmentWithdrawal>()
+                            Withdrawals = new List<GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal>()
                         }
 
                     };
@@ -44,13 +45,13 @@ namespace IntermediateTest.GovernmentSharedFunds.Services.GovernmentEmployees
                         Account = new GovernmentEmployeeResponse.GovernmentAccount
                         {
                             Balance = 22000.00m,
-                            Withdrawals = new List<GovernmentWithdrawal> { 
-                                new GovernmentWithdrawal
+                            Withdrawals = new List<GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal> { 
+                                new GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal
                                 {
                                     Amount = 550.00m,
                                     CreatedOn = DateTime.UtcNow.AddYears(-2)
                                 },
-                                new GovernmentWithdrawal
+                                new GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal
                                 {
                                     Amount = 1050.00m,
                                     CreatedOn = DateTime.UtcNow.AddYears(-1)
@@ -67,18 +68,18 @@ namespace IntermediateTest.GovernmentSharedFunds.Services.GovernmentEmployees
                         Account = new GovernmentEmployeeResponse.GovernmentAccount
                         {
                             Balance = 12500.00m,
-                            Withdrawals = new List<GovernmentWithdrawal> {
-                                new GovernmentWithdrawal
+                            Withdrawals = new List<GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal> {
+                                new GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal
                                 {
                                     Amount = 450.00m,
                                     CreatedOn = DateTime.UtcNow.AddYears(-2)
                                 },
-                                new GovernmentWithdrawal
+                                new GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal
                                 {
                                     Amount = 550.00m,
                                     CreatedOn = DateTime.UtcNow.AddYears(-1)
                                 },
-                                new GovernmentWithdrawal
+                                new GovernmentEmployeeResponse.GovernmentAccount.GovernmentWithdrawal
                                 {
                                     Amount = 450.00m,
                                     CreatedOn = DateTime.UtcNow.Date

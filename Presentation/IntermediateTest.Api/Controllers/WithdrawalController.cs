@@ -26,7 +26,6 @@ namespace IntermediateTest.Api.Controllers
             _logger = logger;
         }
 
-        // POST: api/Withdrawal
         [HttpPost]
         public async Task<ActionResult<WithdrawalResponse>> VerifyWithdrawal(WithdrawalRequest request) 
         {
